@@ -10,7 +10,6 @@ approx = 0
 curr = a
 intX = (b-a)/n
 
-
 # summations
 for i in range(n):
 
