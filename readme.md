@@ -1,3 +1,13 @@
 # Riemann's Sums Visualizer
 
-### A simple python progam to help students better understand conceptual Calculus
+## Description
+A Python GUI program written to help students better comprehend Riemann's Sums.
+
+## Math
+This program implements a Riemann's Sum esimator, evaluating the area under the curve using given intervals for each rectangle.
+
+## Instructions
+* Install dependencies:
+  * Assuming Python is properly installed, open a command window and type:
+    * 'pip install pillow'
+  *In a command window run 'python introScreen.py'.
