@@ -4,7 +4,7 @@
 A Python GUI program written to help students better comprehend Riemann's Sums.
 
 ## Math
-This program implements a Riemann's Sum esimator, evaluating the area under the curve using given intervals for each rectangle.
+This program implements a Riemann's Sum equation, evaluating the area under the curve using given intervals for each rectangle.
 
 ## Instructions
 * Install dependencies:
