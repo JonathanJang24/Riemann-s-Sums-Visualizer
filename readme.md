@@ -9,6 +9,6 @@ This program implements a Riemann's Sum equation, evaluating the area under the 
 ## Instructions
 * Install dependencies:
   * Assuming Python is properly installed, open a command window and type:
-    * 'pip install pillow'
+    * `pip install pillow`
    
 *In a command window run 'python introScreen.py'.
