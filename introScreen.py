@@ -52,7 +52,7 @@ credit.place(relx=.5,y=160,anchor=CENTER)
 
 # Description label
 description = tk.Label(
-    text="A Python program created with the intent to help students\nbetter visualize and understand the concept of\nRiemann's Sums. Riemann's Sums is an essential calculus\nconcept to estimate the area under a curve. As more\nrectangles are used to estimate, a limit is formed that\napproaches the indefinite integral: the true value of the area.",
+    text="A Python program created with the intent to help students\nbetter visualize and understand the concept of\nRiemann's Sums. Riemann's Sums is an essential calculus\nconcept which estimates the area under a curve. As more\nrectangles are used to estimate, a limit is formed that\napproaches the indefinite integral: the true value of the area.",
     font=(font_name, 16),
     foreground=font_color,
     bg=bg_color
