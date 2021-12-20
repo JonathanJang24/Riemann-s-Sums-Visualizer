@@ -2,8 +2,10 @@ import tkinter as tk
 from tkinter import font
 from tkinter.constants import CENTER, GROOVE, RIDGE, S, SUNKEN, UNDERLINE
 from tkinter.font import BOLD, ITALIC
-from PIL import ImageTk, Image
+from PIL import Image, ImageTk
 from inputScreen import fields
+
+font_color, bg_color, font_name  = "#F8FFE5","#736B92", "PierSans-Light"
 
 def start():
     # clears widgets off of current screen 
@@ -11,10 +13,6 @@ def start():
         if(str(w)!='.!label'):
             w.destroy()
     fields(root)
-
-font_color = "#F8FFE5"
-bg_color = "#736B92"
-font_name = "PierSans-Light"
 
 # Tkinter initialization
 root = tk.Tk()
@@ -58,13 +56,6 @@ description = tk.Label(
     bg=bg_color
 )
 description.place(relx=.5,y=300,anchor=CENTER)
-
-# lambda creates anon-func as the .after function requires a method
-# label.after(3000, lambda: label.place(
-#     x = 500,
-#     y = 500,
-#     anchor='s'
-# ))
 
 begin = tk.Button(
     text="Begin Visualizing →",
