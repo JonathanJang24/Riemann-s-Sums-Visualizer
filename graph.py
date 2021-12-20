@@ -23,9 +23,9 @@ def graphInit(eq, start, end, inc, iter):
         fg=graph_color,
         font=(font_name,20,BOLD)
     )
-    area.place(relx=.5,y=450,anchor=CENTER)
+    area.place(relx=.5,y=470,anchor=CENTER)
 
-    # # of squares text
+    # number of squares text
     sqQuant = tk.Label(
         graph,
         text="",
@@ -35,12 +35,35 @@ def graphInit(eq, start, end, inc, iter):
     )
     sqQuant.place(relx=.9,y=25,anchor=CENTER)
 
+    # Upper and lower bound label
+    lower = tk.Label(
+        graph,
+        text=start,
+        bg=graph_bg,
+        fg=graph_color,
+        font=(font_name,12)
+    )
+    lower.place(x=17, rely=.51, anchor=CENTER)
+
+    upper = tk.Label(
+        graph,
+        text=end,
+        bg=graph_bg,
+        fg=graph_color,
+        font=(font_name,12)
+    )
+    upper.place(x=483,rely=.51,anchor=CENTER)
+
     summation(eq, start, end, inc, iter, 5, 0)    
-
-
         
 def summation(eq, start, end, inc, iter, n, i):
     canvas.delete('all')
+    vals = []
+
+    # x axis line
+    canvas.create_rectangle((28,255,470,257),fill=graph_color)
+    # y axis line
+    canvas.create_rectangle((28,30,30,470),fill=graph_color)
     f = eq.split(" ")
 
     # inital vars for each iteration
@@ -55,7 +78,7 @@ def summation(eq, start, end, inc, iter, n, i):
         for k in range(len(f)):
             y += int(f[k])*pow(curr,len(f)-k-1)
         
-        drawSq(curr,y,intX)
+        vals.append((curr,y))
 
         # Adding square area to total Riem. Sum
         total += y*intX
@@ -66,10 +89,16 @@ def summation(eq, start, end, inc, iter, n, i):
     area.config(text="Total Area: "+str(round(total,3)))
     sqQuant.config(text=str(n)+" squares")
 
-    # recursivley calling the function allows for paused drawing
-    if(i<iter):
-        canvas.after(2000,lambda:summation(eq, start, end, inc, iter, n+inc, i+1))
 
-def drawSq(x,y,inc):
-    canvas.create_rectangle((x*20,300-(y),((x+inc)*20),300),fill=graph_color)
+    drawSq(vals, intX, 0)
+    # recursivley calling the function allows for paused drawing
+    if(i<iter-1):
+        canvas.after(5000,lambda:summation(eq, start, end, inc, iter, n+inc, i+1))
+
+def drawSq(vals,inc,i):
+    x,y = vals[i]
+    canvas.create_rectangle((x*20,300-y,((x+inc)*20),300),fill=graph_color)
+
+    if(i<len(vals)-1):
+        canvas.after(int(5000/len(vals)),lambda:drawSq(vals,inc,i+1))
     

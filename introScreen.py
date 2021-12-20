@@ -42,7 +42,7 @@ title.place(relx=.5,y=80,anchor=CENTER)
 
 # Created by label
 credit = tk.Label(
-    text = "Created by: Jonathan Jang",    font=(font_name,24,UNDERLINE),
+    text = "Created by: Jonathan Jang", font=(font_name,24,UNDERLINE),
     fg=font_color,
     bg=bg_color
 )

@@ -5,8 +5,8 @@ from graph import graphInit
 
 font_color, bg_color, font_name  = "#F8FFE5","#736B92", "PierSans-Light"
 
-
 def fields(root):
+
     global eq_field, start_field, inc_field, iter_field
     eq_label = tk.Label(
         text="Enter equation: ",
