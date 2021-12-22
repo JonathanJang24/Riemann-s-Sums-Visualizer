@@ -3,11 +3,11 @@ from tkinter.constants import CENTER
 from tkinter.font import BOLD
 from graph import graphInit
 
-font_color, bg_color, font_name  = "#F8FFE5","#736B92", "PierSans-Light"
+font_color, bg_color, font_name, error_color  = "#F8FFE5","#736B92", "PierSans-Light", "#F88379"
 
 def fields(root):
-
     global eq_field, start_field, inc_field, iter_field
+
     eq_label = tk.Label(
         text="Enter equation: ",
         bg=bg_color,
@@ -20,8 +20,9 @@ def fields(root):
         root,
         font=(font_name, 24),
         bg=bg_color,
-        fg=font_color,
+        fg=font_color
     )
+    
     eq_field.place(x=300,y=150,height=50,width=250)
 
     start_label = tk.Label(
@@ -95,8 +96,6 @@ def fields(root):
         font=(font_name, 20, BOLD),
         activebackground=bg_color,
         activeforeground=font_color,
-        command = lambda: graphInit(eq_field.get(), int(start_field.get()), int(end_field.get()), int(inc_field.get()), int(iter_field.get()))
+        command = lambda: graphInit( eq_field.get(), start_field.get(), end_field.get(), inc_field.get(), iter_field.get())
     )
     graph_button.place(relx=.5,y=575,anchor=CENTER)
-
-

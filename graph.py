@@ -1,12 +1,29 @@
 import tkinter as tk
-from tkinter.constants import CENTER
+from tkinter.constants import CENTER, FALSE
 import time
 from tkinter.font import BOLD
 
-graph_bg,graph_color,font_name = "#000000","#FFFFFF","PierSans-Light"
+graph_bg,graph_color,font_name,bg_color, error_color = "#000000","#FFFFFF","PierSans-Light","#736B92", "#F88379"
+
+def isNum(x):
+    return str.isdigit(x)
 
 def graphInit(eq, start, end, inc, iter):
     global canvas, area, sqQuant
+    error = tk.Label(
+                text="",
+                fg=error_color,
+                bg=bg_color,
+                font=(font_name, 16)
+            )
+    error.place(relx=.5,y=520,anchor=CENTER)
+    if(not(isNum(start) and isNum(end) and isNum(inc) and isNum(iter))):
+        error.config(text="Error, invalid input.")
+        return FALSE
+    else:
+        error.config(text="                                     ")
+
+    start, end, inc, iter = int(start), int(end), int(inc), int(iter)
     graph = tk.Toplevel()
     graph.title("Graph")
     graph.geometry("500x500")
