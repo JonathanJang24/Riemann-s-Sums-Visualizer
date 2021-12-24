@@ -22,3 +22,7 @@ This program implements a Riemann's Sum equation, evaluating the area under the 
 * Frame by frame animation for visual learners
 * Total area for each iteration
 * Auto-scaling for custom made graph
+
+## Restrictions
+* The current graphing system will have errors for iterations greater than roughly 1000 squares
+  * The animation timing will have rounding errors causing overflow into the next one
